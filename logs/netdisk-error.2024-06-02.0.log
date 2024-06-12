@@ -1,0 +1,10 @@
+2024-06-02 00:06:04.297 [http-nio-8003-exec-2] ERROR c.y.c.aspect.GlobalOperationAspect -全局拦截器异常
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-02 00:06:04.300 [http-nio-8003-exec-2] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/getUserSpace，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-02 00:06:04.303 [http-nio-8003-exec-3] ERROR c.y.c.aspect.GlobalOperationAspect -全局拦截器异常
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-02 00:06:04.305 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/loadDataList，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-02 00:46:03.201 [http-nio-8003-exec-2] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: account or password wrong

@@ -1,0 +1,64 @@
+2024-06-04 01:15:02.590 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-06-04 01:15:02.600 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-04 01:15:02.606 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2024-06-04 01:23:57.956 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-06-04 01:23:57.959 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-06-04 12:23:30.800 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 21432 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-06-04 12:23:30.802 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-06-04 12:23:31.908 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-06-04 12:23:31.913 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-04 12:23:31.957 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2024-06-04 12:23:33.156 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-06-04 12:23:33.171 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-06-04 12:23:33.171 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-06-04 12:23:33.171 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-06-04 12:23:33.297 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-06-04 12:23:33.297 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 2414 ms
+2024-06-04 12:23:35.136 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-06-04 12:23:35.168 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-06-04 12:23:35.191 [main] INFO  com.ywy.MainApplication -Started MainApplication in 5.191 seconds (JVM running for 8.538)
+2024-06-04 12:23:35.286 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-06-04 12:23:35.491 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-06-04 15:17:36.256 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-06-04 15:17:36.258 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-04 15:17:36.262 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2024-06-04 16:12:12.917 [http-nio-8003-exec-3] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-04 16:12:12.917 [http-nio-8003-exec-3] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-06-04 16:12:12.927 [http-nio-8003-exec-3] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 10 ms
+2024-06-04 16:12:13.070 [http-nio-8003-exec-1] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-04 16:12:13.077 [http-nio-8003-exec-1] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/getUserSpace，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-04 16:12:13.083 [http-nio-8003-exec-3] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-04 16:12:13.084 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/loadDataList，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-04 17:37:13.568 [HikariCPDatasource housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=1h25m4s233ms813µs).
+2024-06-04 17:40:17.254 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-06-04 17:40:17.255 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-04 17:40:17.259 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2024-06-04 18:11:39.542 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-06-04 18:11:39.544 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-06-04 19:43:51.748 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 19264 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-06-04 19:43:51.751 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-06-04 19:43:52.598 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-06-04 19:43:52.602 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-04 19:43:52.641 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2024-06-04 19:43:53.718 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-06-04 19:43:53.732 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-06-04 19:43:53.732 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-06-04 19:43:53.733 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-06-04 19:43:53.845 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-06-04 19:43:53.846 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 2022 ms
+2024-06-04 19:43:55.767 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-06-04 19:43:55.793 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-06-04 19:43:55.812 [main] INFO  com.ywy.MainApplication -Started MainApplication in 4.816 seconds (JVM running for 6.759)
+2024-06-04 19:43:55.901 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-06-04 19:43:56.095 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-06-04 19:47:45.625 [http-nio-8003-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-04 19:47:45.625 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-06-04 19:47:45.627 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 2 ms
+2024-06-04 22:50:40.912 [http-nio-8003-exec-2] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: 图片验证码不正确
+2024-06-04 22:50:58.704 [http-nio-8003-exec-10] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/newFolder，错误信息：
+com.ywy.core.exception.BusinessException: file nameaalready exist

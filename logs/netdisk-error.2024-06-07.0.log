@@ -1,0 +1,12 @@
+2024-06-07 16:28:32.026 [http-nio-8003-exec-3] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-07 16:28:32.030 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/getUserSpace，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-07 16:28:32.034 [http-nio-8003-exec-2] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-07 16:28:32.035 [http-nio-8003-exec-2] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/loadDataList，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-07 16:30:10.117 [http-nio-8003-exec-3] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Request parameter error，filePidCan't be empty
+2024-06-07 16:30:10.119 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/loadFolderList，错误信息：
+com.ywy.core.exception.BusinessException: Request parameter error，filePidCan't be empty

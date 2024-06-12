@@ -1,0 +1,12 @@
+2024-06-04 16:12:13.070 [http-nio-8003-exec-1] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-04 16:12:13.077 [http-nio-8003-exec-1] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/getUserSpace，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-04 16:12:13.083 [http-nio-8003-exec-3] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-04 16:12:13.084 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/loadDataList，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-04 22:50:40.912 [http-nio-8003-exec-2] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: 图片验证码不正确
+2024-06-04 22:50:58.704 [http-nio-8003-exec-10] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/newFolder，错误信息：
+com.ywy.core.exception.BusinessException: file nameaalready exist

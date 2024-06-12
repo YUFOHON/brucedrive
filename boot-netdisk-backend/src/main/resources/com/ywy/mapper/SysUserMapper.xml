@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ywy.mapper.SysUserMapper">
+
+    <!--实体映射-->
+    <resultMap id="BaseResultMap" type="com.ywy.pojo.entity.SysUser">
+        <id property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="qqOpenId" column="qq_open_id" jdbcType="VARCHAR"/>
+        <result property="qqAvatar" column="qq_avatar" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="lastLoginTime" column="last_login_time" jdbcType="TIMESTAMP"/>
+        <result property="totalSpace" column="total_space" jdbcType="BIGINT"/>
+        <result property="usedSpace" column="used_space" jdbcType="BIGINT"/>
+        <result property="status" column="status" jdbcType="TINYINT"/>
+        <result property="role" column="role" jdbcType="TINYINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!-- 通用查询结果列-->
+    <sql id="BaseColumnList">
+        id
+        ,nick_name,email,qq_open_id,qq_avatar,password,
+        last_login_time,total_space,used_space,status,role,create_time,update_time
+    </sql>
+
+    <!-- 通用查询条件列-->
+    <sql id="BaseQueryCondition">
+        <where>
+            <if test="param.userId != null and param.userId!=''">
+                and id = #{param.userId}
+            </if>
+            <if test="param.nickName != null and param.nickName != ''">
+                and nick_name = #{param.nickName}
+            </if>
+            <if test="param.email != null and param.email != ''">
+                and email = #{param.email}
+            </if>
+            <if test="param.qqOpenId != null and param.qqOpenId != ''">
+                and qq_open_id = #{param.qqOpenId}
+            </if>
+            <if test="param.status != null">
+                and status = #{param.status}
+            </if>
+
+
+            <if test="param.nickNameFuzzy != null and param.nickNameFuzzy != ''">
+                and nick_name like concat('%', #{param.nickNameFuzzy}, '%')
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectById" parameterType="string" resultMap="BaseResultMap">
+        select <include refid="BaseColumnList"/> from sys_user where id = #{id}
+    </select>
+
+    <select id="selectList" parameterType="com.ywy.pojo.param.UserParam" resultMap="BaseResultMap">
+        select
+        <include refid="BaseColumnList"/>
+        from sys_user
+        <include refid="BaseQueryCondition"/>
+        <if test="param.orderBy!=null">
+            order by ${param.orderBy}
+        </if>
+        <if test="param.pageNo!=null and param.pageSize!=null">
+            limit ${(param.pageNo - 1) * param.pageSize}, ${param.pageSize}
+        </if>
+    </select>
+
+    <select id="selectCount" parameterType="com.ywy.pojo.param.UserParam" resultType="int">
+        select count(1) from sys_user
+        <include refid="BaseQueryCondition"/>
+    </select>
+
+    <insert id="insert" parameterType="com.ywy.pojo.entity.SysUser">
+        insert into sys_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bean.id != null">
+                id,
+            </if>
+            <if test="bean.nickName != null">
+                nick_name,
+            </if>
+            <if test="bean.email != null">
+                email,
+            </if>
+            <if test="bean.qqOpenId != null">
+                qq_open_id,
+            </if>
+            <if test="bean.qqAvatar != null">
+                qq_avatar,
+            </if>
+            <if test="bean.password != null">
+                password,
+            </if>
+            <if test="bean.lastLoginTime != null">
+                last_login_time,
+            </if>
+            <if test="bean.totalSpace != null">
+                total_space,
+            </if>
+            <if test="bean.usedSpace != null">
+                used_space,
+            </if>
+            <if test="bean.status != null">
+                status,
+            </if>
+            <if test="bean.role != null">
+                role,
+            </if>
+            <if test="bean.createTime != null">
+                create_time,
+            </if>
+            <if test="bean.updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bean.id != null">
+                #{bean.id},
+            </if>
+            <if test="bean.nickName != null">
+                #{bean.nickName},
+            </if>
+            <if test="bean.email!=null">
+                #{bean.email},
+            </if>
+            <if test="bean.qqOpenId != null">
+                #{bean.qqOpenId},
+            </if>
+            <if test="bean.qqAvatar != null">
+                #{bean.qqAvatar},
+            </if>
+            <if test="bean.password != null">
+                #{bean.password},
+            </if>
+            <if test="bean.lastLoginTime != null">
+                #{bean.lastLoginTime},
+            </if>
+            <if test="bean.totalSpace != null">
+                #{bean.totalSpace},
+            </if>
+            <if test="bean.usedSpace != null">
+                #{bean.usedSpace},
+            </if>
+            <if test="bean.status != null">
+                #{bean.status},
+            </if>
+            <if test="bean.role != null">
+                #{bean.role},
+            </if>
+            <if test="bean.createTime != null">
+                #{bean.createTime},
+            </if>
+            <if test="bean.updateTime != null">
+                #{bean.updateTime},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="insertBatch" parameterType="com.ywy.pojo.entity.SysUser">
+        insert into sys_user(id, nick_name, email, qq_open_id, qq_avatar, password, last_login_time, total_space,
+            used_space, status, role, create_time, update_time) values
+        <foreach collection="list" item="item" separator=",">
+            (
+                #{item.id},
+                #{item.nickName},
+                #{item.email},
+                #{item.qqOpenId},
+                #{item.qqAvatar},
+                #{item.password},
+                #{item.lastLoginTime},
+                #{item.totalSpace},
+                #{item.usedSpace},
+                #{item.status},
+                #{item.role},
+                #{item.createTime},
+                #{item.updateTime}
+            )
+        </foreach>
+    </insert>
+
+    <update id="updateById">
+        update sys_user
+        <set>
+            <if test="bean.nickName != null">
+                nick_name = #{bean.nickName},
+            </if>
+            <if test="bean.email != null">
+                email = #{bean.email},
+            </if>
+            <if test="bean.qqOpenId != null">
+                qq_open_id = #{bean.qqOpenId},
+            </if>
+            <if test="bean.qqAvatar != null">
+                qq_avatar = #{bean.qqAvatar},
+            </if>
+            <if test="bean.password != null">
+                password = #{bean.password},
+            </if>
+            <if test="bean.lastLoginTime != null">
+                last_login_time = #{bean.lastLoginTime},
+            </if>
+            <if test="bean.totalSpace != null">
+                total_space = #{bean.totalSpace},
+            </if>
+            <if test="bean.usedSpace != null">
+                used_space = #{bean.usedSpace},
+            </if>
+            <if test="bean.status != null">
+                status = #{bean.status},
+            </if>
+            <if test="bean.role != null">
+                role = #{bean.role},
+            </if>
+            <if test="bean.createTime != null">
+                create_time = #{bean.createTime},
+            </if>
+            <if test="bean.updateTime != null">
+                update_time = #{bean.updateTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="updateByParam">
+        update sys_user
+        <set>
+            <if test="bean.nickName != null">
+                nick_name = #{bean.nickName},
+            </if>
+            <if test="bean.email != null">
+                email = #{bean.email},
+            </if>
+            <if test="bean.qqOpenId != null">
+                qq_open_id = #{bean.qqOpenId},
+            </if>
+            <if test="bean.qqAvatar != null">
+                qq_avatar = #{bean.qqAvatar},
+            </if>
+            <if test="bean.password != null">
+                password = #{bean.password},
+            </if>
+            <if test="bean.lastLoginTime != null">
+                last_login_time = #{bean.lastLoginTime},
+            </if>
+            <if test="bean.totalSpace != null">
+                total_space = #{bean.totalSpace},
+            </if>
+            <if test="bean.usedSpace != null">
+                used_space = #{bean.usedSpace},
+            </if>
+            <if test="bean.status != null">
+                status = #{bean.status},
+            </if>
+            <if test="bean.role != null">
+                role = #{bean.role},
+            </if>
+            <if test="bean.createTime != null">
+                create_time = #{bean.createTime},
+            </if>
+            <if test="bean.updateTime != null">
+                update_time = #{bean.updateTime},
+            </if>
+        </set>
+        <include refid="BaseQueryCondition"/>
+    </update>
+
+    <delete id="deleteById" parameterType="string">
+        delete from sys_user where id = #{id}
+    </delete>
+
+    <delete id="deleteByParam">
+        delete from sys_user
+        <include refid="BaseQueryCondition"/>
+    </delete>
+
+
+    <select id="selectByEmail" resultMap="BaseResultMap">
+        select
+        <include refid="BaseColumnList"/>
+        from sys_user where email = #{email}
+    </select>
+
+    <select id="selectByNickName" resultMap="BaseResultMap">
+        select
+        <include refid="BaseColumnList"/>
+        from sys_user where nick_name = #{nickName}
+    </select>
+
+    <select id="selectByQqOpenId" resultMap="BaseResultMap">
+        select
+        <include refid="BaseColumnList"/>
+        from sys_user where qq_open_id = #{qqOpenId}
+    </select>
+
+    <update id="updateByEmail">
+        update sys_user
+        <set>
+            <if test="nickName != null">
+                nick_name = #{nickName},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="lastLoginTime != null">
+                last_login_time = #{lastLoginTime},
+            </if>
+            <if test="totalSpace != null">
+                total_space = #{totalSpace},
+            </if>
+            <if test="usedSpace != null">
+                used_space = #{usedSpace},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="role != null">
+                role = #{role},
+            </if>
+        </set>
+        where email = #{email}
+    </update>
+
+    <update id="updateByQqOpenId">
+        update sys_user
+        <set>
+            <if test="nickName != null">
+                nick_name = #{nickName},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="lastLoginTime != null">
+                last_login_time = #{lastLoginTime},
+            </if>
+            <if test="totalSpace != null">
+                total_space = #{totalSpace},
+            </if>
+            <if test="usedSpace != null">
+                used_space = #{usedSpace},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="role != null">
+                role = #{role},
+            </if>
+        </set>
+        where qq_open_id = #{qqOpenId}
+    </update>
+
+    <update id="updateUserSpace">
+        update sys_user
+        <set>
+            <if test="addUsedSpace != null">
+                used_space = used_space + #{addUsedSpace},
+            </if>
+            <if test="addTotalSpace != null">
+                total_space = total_space + #{addTotalSpace},
+            </if>
+        </set>
+        where id = #{userId}
+        <if test="addUsedSpace != null">
+            and used_space + #{addUsedSpace} &lt;= total_space
+        </if>
+        <if test="addTotalSpace != null">
+            and total_space + #{addTotalSpace} &gt;= used_space
+        </if>
+    </update>
+
+</mapper>

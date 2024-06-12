@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ywy.mapper.SysEmailCodeMapper">
+
+    <!--实体映射-->
+    <resultMap id="BaseResultMap" type="com.ywy.pojo.entity.SysEmailCode">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="code" column="code" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="TINYINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!-- 通用查询结果列-->
+    <sql id="BaseColumnList">
+        id
+        ,email,code,status,create_time
+    </sql>
+
+    <!-- 通用查询条件列-->
+    <sql id="BaseQueryCondition">
+        <where>
+            <if test="param.email != null and param.email!=''">
+                and email = #{param.email}
+            </if>
+            <if test="param.code != null and param.code!=''">
+                and code = #{param.code}
+            </if>
+            <if test="param.status != null">
+                and status = #{param.status}
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectById" parameterType="string" resultMap="BaseResultMap">
+        select <include refid="BaseColumnList"/> from sys_email_code where id = #{id}
+    </select>
+
+    <select id="selectList" parameterType="com.ywy.pojo.param.EmailCodeParam" resultMap="BaseResultMap">
+        select
+        <include refid="BaseColumnList"/>
+        from sys_email_code
+        <include refid="BaseQueryCondition"/>
+        <if test="param.orderBy!=null">
+            order by ${param.orderBy}
+        </if>
+        <if test="param.pageNo!=null and param.pageSize!=null">
+            limit ${(param.pageNo - 1) * param.pageSize}, ${param.pageSize}
+        </if>
+    </select>
+
+    <select id="selectCount" parameterType="com.ywy.pojo.param.EmailCodeParam" resultType="int">
+        select count(1) from sys_email_code
+        <include refid="BaseQueryCondition"/>
+    </select>
+
+    <insert id="insert" parameterType="com.ywy.pojo.entity.SysEmailCode">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into sys_email_code
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bean.email != null">
+                email,
+            </if>
+            <if test="bean.code != null">
+                code,
+            </if>
+            <if test="bean.status != null">
+                status,
+            </if>
+            <if test="bean.createTime != null">
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bean.email!=null">
+                #{bean.email},
+            </if>
+            <if test="bean.code!=null">
+                #{bean.code},
+            </if>
+            <if test="bean.status!=null">
+                #{bean.status},
+            </if>
+            <if test="bean.createTime!=null">
+                #{bean.createTime},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="insertBatch" parameterType="com.ywy.pojo.entity.SysEmailCode">
+        insert into sys_email_code(email, code, status, create_time) values
+        <foreach collection="list" item="item" separator=",">
+            (
+                #{item.email},
+                #{item.code},
+                #{item.status},
+                #{item.createTime}
+            )
+        </foreach>
+    </insert>
+
+    <update id="updateById">
+        update sys_email_code
+        <set>
+            <if test="bean.email != null">
+                email = #{bean.email},
+            </if>
+            <if test="bean.code != null">
+                code = #{bean.code},
+            </if>
+            <if test="bean.status != null">
+                status = #{bean.status},
+            </if>
+            <if test="bean.createTime != null">
+                create_time = #{bean.createTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="updateByParam">
+        update sys_email_code
+        <set>
+            <if test="bean.email != null">
+                email = #{bean.email},
+            </if>
+            <if test="bean.code != null">
+                code = #{bean.code},
+            </if>
+            <if test="bean.status != null">
+                status = #{bean.status},
+            </if>
+            <if test="bean.createTime != null">
+                create_time = #{bean.createTime},
+            </if>
+        </set>
+        <include refid="BaseQueryCondition"/>
+    </update>
+
+    <delete id="deleteById" parameterType="string">
+        delete from sys_email_code where id = #{id}
+    </delete>
+
+    <delete id="deleteByParam">
+        delete from sys_email_code
+        <include refid="BaseQueryCondition"/>
+    </delete>
+
+
+    <update id="disableCode">
+        update sys_email_code
+        set status=1
+        where email = #{email}
+          and status = 0
+    </update>
+
+    <select id="selectByEmailAndCode" resultMap="BaseResultMap">
+        select
+        <include refid="BaseColumnList"/>
+        from sys_email_code where email=#{email} and code=#{code}
+    </select>
+
+</mapper>

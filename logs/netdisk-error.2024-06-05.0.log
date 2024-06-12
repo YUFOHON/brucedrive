@@ -1,0 +1,14 @@
+2024-06-05 00:21:25.359 [http-nio-8003-exec-3] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-05 00:21:25.362 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/loadDataList，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-05 00:21:42.815 [http-nio-8003-exec-5] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: 图片验证码不正确
+2024-06-05 00:49:50.108 [http-nio-8003-exec-4] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Request address does not exist
+2024-06-05 00:49:50.109 [http-nio-8003-exec-4] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/admin/loadFileList，错误信息：
+com.ywy.core.exception.BusinessException: Request address does not exist
+2024-06-05 00:54:39.190 [http-nio-8003-exec-3] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Request address does not exist
+2024-06-05 00:54:39.191 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/admin/loadFileList，错误信息：
+com.ywy.core.exception.BusinessException: Request address does not exist

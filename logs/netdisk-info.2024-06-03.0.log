@@ -1,0 +1,179 @@
+2024-06-03 00:10:28.298 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 18948 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-06-03 00:10:28.304 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-06-03 00:10:29.333 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-06-03 00:10:29.341 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-03 00:10:29.397 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2024-06-03 00:10:30.612 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-06-03 00:10:30.628 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-06-03 00:10:30.629 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-06-03 00:10:30.630 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-06-03 00:10:30.752 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-06-03 00:10:30.753 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 2354 ms
+2024-06-03 00:10:32.621 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-06-03 00:10:32.651 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-06-03 00:10:32.674 [main] INFO  com.ywy.MainApplication -Started MainApplication in 5.077 seconds (JVM running for 7.258)
+2024-06-03 00:10:32.774 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-06-03 00:10:32.987 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-06-03 00:11:00.726 [http-nio-8003-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-03 00:11:00.726 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-06-03 00:11:00.728 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 2 ms
+2024-06-03 00:11:00.824 [http-nio-8003-exec-2] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 00:11:00.824 [http-nio-8003-exec-3] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 00:11:00.828 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/getUserSpace，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 00:11:00.828 [http-nio-8003-exec-2] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/loadDataList，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 00:16:18.907 [http-nio-8003-exec-7] ERROR c.y.s.impl.SysFileInfoServiceImpl -文件上傳失敗
+com.ywy.core.exception.BusinessException: Insufficient network disk space, please expand
+2024-06-03 00:16:18.908 [http-nio-8003-exec-7] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/uploadFile，错误信息：
+com.ywy.core.exception.BusinessException: Insufficient network disk space, please expand
+2024-06-03 00:24:43.437 [http-nio-8003-exec-3] ERROR c.y.s.impl.SysFileInfoServiceImpl -文件上傳失敗
+com.ywy.core.exception.BusinessException: Insufficient network disk space, please expand
+2024-06-03 00:24:43.438 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/uploadFile，错误信息：
+com.ywy.core.exception.BusinessException: Insufficient network disk space, please expand
+2024-06-03 00:25:02.906 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-06-03 00:25:02.913 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-06-03 00:25:10.982 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 22348 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-06-03 00:25:10.984 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-06-03 00:25:12.068 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-06-03 00:25:12.071 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-03 00:25:12.104 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2024-06-03 00:25:13.123 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-06-03 00:25:13.136 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-06-03 00:25:13.136 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-06-03 00:25:13.136 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-06-03 00:25:13.238 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-06-03 00:25:13.239 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 2183 ms
+2024-06-03 00:25:14.816 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-06-03 00:25:14.841 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-06-03 00:25:14.861 [main] INFO  com.ywy.MainApplication -Started MainApplication in 4.552 seconds (JVM running for 9.386)
+2024-06-03 00:25:14.949 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-06-03 00:25:15.116 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-06-03 00:25:33.837 [http-nio-8003-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-03 00:25:33.837 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-06-03 00:25:33.839 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 2 ms
+2024-06-03 00:25:33.922 [http-nio-8003-exec-1] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 00:25:33.923 [http-nio-8003-exec-1] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/getUserSpace，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 00:30:16.313 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-06-03 00:30:16.322 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-06-03 11:48:17.628 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 21584 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-06-03 11:48:17.630 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-06-03 11:48:18.502 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-06-03 11:48:18.506 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-03 11:48:18.536 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-06-03 11:48:19.224 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-06-03 11:48:19.232 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-06-03 11:48:19.232 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-06-03 11:48:19.232 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-06-03 11:48:19.336 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-06-03 11:48:19.337 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 1666 ms
+2024-06-03 11:48:20.470 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-06-03 11:48:20.505 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-06-03 11:48:20.521 [main] INFO  com.ywy.MainApplication -Started MainApplication in 3.334 seconds (JVM running for 3.941)
+2024-06-03 11:48:20.576 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-06-03 11:48:20.702 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-06-03 11:48:26.134 [http-nio-8003-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-03 11:48:26.135 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-06-03 11:48:26.136 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 1 ms
+2024-06-03 11:48:26.245 [http-nio-8003-exec-1] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 11:48:26.247 [http-nio-8003-exec-1] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/uploadFile，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 18:36:32.614 [http-nio-8003-exec-3] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 18:36:32.619 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/uploadFile，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 18:39:35.131 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-06-03 18:39:35.133 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-06-03 18:39:51.388 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 6644 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-06-03 18:39:51.391 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-06-03 18:39:52.380 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-06-03 18:39:52.385 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-03 18:39:52.433 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2024-06-03 18:39:53.722 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-06-03 18:39:53.737 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-06-03 18:39:53.737 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-06-03 18:39:53.738 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-06-03 18:39:53.865 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-06-03 18:39:53.865 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 2386 ms
+2024-06-03 18:39:55.846 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-06-03 18:39:55.877 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-06-03 18:39:55.901 [main] INFO  com.ywy.MainApplication -Started MainApplication in 5.346 seconds (JVM running for 9.125)
+2024-06-03 18:39:56.009 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-06-03 18:39:56.243 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-06-03 18:40:07.961 [http-nio-8003-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-03 18:40:07.962 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-06-03 18:40:07.963 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 1 ms
+2024-06-03 18:40:08.131 [http-nio-8003-exec-1] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 18:40:08.134 [http-nio-8003-exec-1] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/uploadFile，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 18:40:20.941 [http-nio-8003-exec-2] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: 图片验证码不正确
+2024-06-03 18:51:56.451 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-06-03 18:51:56.452 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-03 18:51:56.458 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-06-03 19:05:55.837 [task-2] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -y -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406/1542164094UHQVEqZE3X.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094UHQVEqZE3X/index.ts完毕
+2024-06-03 19:05:55.882 [task-2] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094UHQVEqZE3X/index.ts -c copy -map 0 -f segment -segment_list C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094UHQVEqZE3X/index.m3u8 -segment_time 30 C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094UHQVEqZE3X/UHQVEqZE3X_%4d.ts完毕
+2024-06-03 19:05:56.038 [task-2] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094UHQVEqZE3X.mp4 -y -vframes 1 -vf scale=150:150/a C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094UHQVEqZE3X.png完毕
+2024-06-03 19:12:18.250 [HikariCPDatasource housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=48s563ms683µs900ns).
+2024-06-03 19:13:48.167 [HikariCPDatasource housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=1m29s916ms893µs600ns).
+2024-06-03 19:16:13.533 [HikariCPDatasource housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=1m41s347ms112µs100ns).
+2024-06-03 19:19:48.222 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-06-03 19:19:48.222 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-03 19:19:48.225 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2024-06-03 19:22:28.736 [http-nio-8003-exec-4] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-06-03 19:22:28.736 [http-nio-8003-exec-4] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-03 19:22:28.738 [http-nio-8003-exec-4] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2024-06-03 19:22:48.501 [task-3] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -y -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406/1542164094Ti088ApMoq.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Ti088ApMoq/index.ts完毕
+2024-06-03 21:42:01.551 [HikariCPDatasource housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=2h19m17s890ms788µs500ns).
+2024-06-03 21:42:02.090 [task-3] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Ti088ApMoq/index.ts -c copy -map 0 -f segment -segment_list C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Ti088ApMoq/index.m3u8 -segment_time 30 C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Ti088ApMoq/Ti088ApMoq_%4d.ts完毕
+2024-06-03 21:43:02.301 [task-3] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Ti088ApMoq.mp4 -y -vframes 1 -vf scale=150:150/a C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Ti088ApMoq.png完毕
+2024-06-03 21:43:22.067 [http-nio-8003-exec-9] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 21:43:22.071 [http-nio-8003-exec-9] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/loadDataList，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 21:46:16.687 [task-4] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -y -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406/1542164094Vr0QHmh5OG.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Vr0QHmh5OG/index.ts完毕
+2024-06-03 21:46:33.185 [task-4] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Vr0QHmh5OG/index.ts -c copy -map 0 -f segment -segment_list C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Vr0QHmh5OG/index.m3u8 -segment_time 30 C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Vr0QHmh5OG/Vr0QHmh5OG_%4d.ts完毕
+2024-06-03 21:48:00.030 [HikariCPDatasource housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=1m43s688ms933µs800ns).
+2024-06-03 21:48:00.150 [task-4] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Vr0QHmh5OG.mp4 -y -vframes 1 -vf scale=150:150/a C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094Vr0QHmh5OG.png完毕
+2024-06-03 21:48:19.221 [task-5] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -y -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406/1542164094udqCgWPOGy.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094udqCgWPOGy/index.ts完毕
+2024-06-03 21:48:25.020 [task-5] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094udqCgWPOGy/index.ts -c copy -map 0 -f segment -segment_list C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094udqCgWPOGy/index.m3u8 -segment_time 30 C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094udqCgWPOGy/udqCgWPOGy_%4d.ts完毕
+2024-06-03 21:48:58.394 [HikariCPDatasource housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=58s363ms345µs800ns).
+2024-06-03 21:48:58.473 [task-5] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094udqCgWPOGy.mp4 -y -vframes 1 -vf scale=150:150/a C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094udqCgWPOGy.png完毕
+2024-06-03 21:50:06.310 [task-6] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -y -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406/15421640949ZzBUDa3SM.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\15421640949ZzBUDa3SM/index.ts完毕
+2024-06-03 21:50:11.077 [task-6] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\15421640949ZzBUDa3SM/index.ts -c copy -map 0 -f segment -segment_list C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\15421640949ZzBUDa3SM/index.m3u8 -segment_time 30 C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\15421640949ZzBUDa3SM/9ZzBUDa3SM_%4d.ts完毕
+2024-06-03 21:50:28.813 [task-6] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\15421640949ZzBUDa3SM.mp4 -y -vframes 1 -vf scale=150:150/a C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\15421640949ZzBUDa3SM.png完毕
+2024-06-03 22:03:01.738 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-06-03 22:03:01.739 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-03 22:03:01.742 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2024-06-03 22:06:40.821 [http-nio-8003-exec-2] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-06-03 22:06:40.821 [http-nio-8003-exec-2] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-03 22:06:40.823 [http-nio-8003-exec-2] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2024-06-03 22:07:58.558 [task-7] ERROR c.y.s.impl.SysFileInfoServiceImpl -File transcoding failed，fileId：b3i49mViQC，userId：1542164094
+java.util.MissingFormatArgumentException: Format specifier '%s'
+	at java.base/java.util.Formatter.format(Formatter.java:2688)
+	at java.base/java.util.Formatter.format(Formatter.java:2625)
+	at java.base/java.lang.String.format(String.java:4145)
+	at com.ywy.util.FFMpegUtil.cutFile4Video(FFMpegUtil.java:32)
+	at com.ywy.service.impl.SysFileInfoServiceImpl.transferFile(SysFileInfoServiceImpl.java:789)
+	at com.ywy.service.impl.SysFileInfoServiceImpl$$FastClassBySpringCGLIB$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-06-03 22:09:01.790 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-06-03 22:09:01.790 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-03 22:09:01.792 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2024-06-03 22:15:22.962 [task-8] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -y -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406/1542164094I0FpKFWpB1.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094I0FpKFWpB1/index.ts完毕
+2024-06-03 22:15:23.337 [task-8] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094I0FpKFWpB1/index.ts -c copy -map 0 -f segment -segment_list C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094I0FpKFWpB1/index.m3u8 -segment_time 30 C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094I0FpKFWpB1/I0FpKFWpB1_%4d.ts完毕
+2024-06-03 22:15:23.430 [task-8] INFO  com.ywy.util.FFMpegUtil -执行命令：ffmpeg -i C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094I0FpKFWpB1.mp4 -y -vframes 1 -vf scale=150:150/a C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\file\202406\1542164094I0FpKFWpB1.png完毕

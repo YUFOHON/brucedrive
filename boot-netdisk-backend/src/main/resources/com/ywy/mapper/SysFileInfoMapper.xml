@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ywy.mapper.SysFileInfoMapper">
+
+    <!--實體映射-->
+    <resultMap id="BaseResultMap" type="com.ywy.pojo.entity.SysFileInfo">
+        <id property="id" column="id" jdbcType="VARCHAR"/>
+        <id property="userId" column="user_id" jdbcType="VARCHAR"/>
+        <result property="fileMd5" column="file_md5" jdbcType="VARCHAR"/>
+        <result property="filePid" column="file_pid" jdbcType="VARCHAR"/>
+        <result property="fileSize" column="file_size" jdbcType="BIGINT"/>
+        <result property="fileName" column="file_name" jdbcType="VARCHAR"/>
+        <result property="fileCover" column="file_cover" jdbcType="VARCHAR"/>
+        <result property="filePath" column="file_path" jdbcType="VARCHAR"/>
+        <result property="fileClass" column="file_class" jdbcType="TINYINT"/>
+        <result property="fileCategory" column="file_category" jdbcType="TINYINT"/>
+        <result property="fileType" column="file_type" jdbcType="TINYINT"/>
+        <result property="status" column="status" jdbcType="TINYINT"/>
+        <result property="delFlag" column="del_flag" jdbcType="TINYINT"/>
+        <result property="recycleTime" column="recycle_time" jdbcType="TIMESTAMP"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+
+        <!--******************** 联表查询 sys_user ********************-->
+        <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 通用查詢結果列-->
+    <sql id="BaseColumnList">
+        id
+        ,user_id,file_md5,file_pid,file_size,file_name,file_cover,file_path,file_class,
+        file_category,file_type,status,del_flag,recycle_time,create_time,update_time
+    </sql>
+
+    <!--
+    通用查詢條件列
+    used by selectList, selectCount, updateByParam, deleteByParam
+    -->
+    <sql id="BaseQueryCondition">
+        <where>
+            <if test="param.fileId != null and param.fileId!=''">
+                and id = #{param.fileId}
+            </if>
+            <if test="param.userId != null and param.userId!=''">
+                and user_id = #{param.userId}
+            </if>
+            <if test="param.fileMd5 != null and param.fileMd5!=''">
+                and file_md5 = #{param.fileMd5}
+            </if>
+            <if test="param.filePid != null and param.filePid!=''">
+                and file_pid = #{param.filePid}
+            </if>
+            <if test="param.fileName != null and param.fileName!=''">
+                and file_name = #{param.fileName}
+            </if>
+            <if test="param.fileClass != null">
+                and file_class = #{param.fileClass}
+            </if>
+            <if test="param.fileCategory != null">
+                and file_category = #{param.fileCategory}
+            </if>
+            <if test="param.fileType != null">
+                and file_type = #{param.fileType}
+            </if>
+            <if test="param.status != null">
+                and status = #{param.status}
+            </if>
+            <if test="param.delFlag != null">
+                and del_flag = #{param.delFlag}
+            </if>
+
+
+            <if test="param.fileNameFuzzy != null and param.fileNameFuzzy != ''">
+                and file_name like concat('%', #{param.fileNameFuzzy}, '%')
+            </if>
+            <if test="param.fileIdArrIn != null and param.fileIdArrIn.length > 0">
+                and id in (<foreach collection="param.fileIdArrIn" item="item" separator=",">#{item}</foreach>)
+            </if>
+            <if test="param.fileIdArrNotIn != null and param.fileIdArrNotIn.length > 0">
+                and id not in (<foreach collection="param.fileIdArrNotIn" item="item" separator=",">
+                #{item}</foreach>)
+            </if>
+            <if test="param.queryExpireTime">
+                and recycle_time &lt; date_sub(now(), interval 10 day)
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectById" parameterType="string" resultMap="BaseResultMap">
+        select <include refid="BaseColumnList"/> from sys_file_info where id = #{id}
+    </select>
+
+    <select id="selectList" parameterType="com.ywy.pojo.param.FileInfoParam" resultMap="BaseResultMap">
+        select
+        <include refid="BaseColumnList"/>
+        <if test="param.queryNickName">
+            ,(select nick_name from sys_user u where u.id = f.user_id) nick_name
+        </if>
+        from sys_file_info f
+
+        <include refid="BaseQueryCondition"/>
+        <if test="param.orderBy!=null">
+            order by ${param.orderBy}
+        </if>
+        <if test="param.pageNo!=null and param.pageSize!=null">
+            limit ${(param.pageNo - 1) * param.pageSize}, ${param.pageSize}
+        </if>
+    </select>
+
+    <select id="selectCount" parameterType="com.ywy.pojo.param.FileInfoParam" resultType="int">
+        select count(1) from sys_file_info
+        <include refid="BaseQueryCondition"/>
+    </select>
+
+    <insert id="insert" parameterType="com.ywy.pojo.entity.SysFileInfo">
+        insert into sys_file_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bean.id != null">
+                id,
+            </if>
+            <if test="bean.userId != null">
+                user_id,
+            </if>
+            <if test="bean.fileMd5 != null">
+                file_md5,
+            </if>
+            <if test="bean.filePid != null">
+                file_pid,
+            </if>
+            <if test="bean.fileSize != null">
+                file_size,
+            </if>
+            <if test="bean.fileName != null">
+                file_name,
+            </if>
+            <if test="bean.fileCover != null">
+                file_cover,
+            </if>
+            <if test="bean.filePath != null">
+                file_path,
+            </if>
+            <if test="bean.fileClass != null">
+                file_class,
+            </if>
+            <if test="bean.fileCategory != null">
+                file_category,
+            </if>
+            <if test="bean.fileType != null">
+                file_type,
+            </if>
+            <if test="bean.status != null">
+                status,
+            </if>
+            <if test="bean.delFlag != null">
+                del_flag,
+            </if>
+            <if test="bean.recycleTime != null">
+                recycle_time,
+            </if>
+            <if test="bean.createTime != null">
+                create_time,
+            </if>
+            <if test="bean.updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bean.id != null">
+                #{bean.id},
+            </if>
+            <if test="bean.userId != null">
+                #{bean.userId},
+            </if>
+            <if test="bean.fileMd5 != null">
+                #{bean.fileMd5},
+            </if>
+            <if test="bean.filePid !=null">
+                #{bean.filePid},
+            </if>
+            <if test="bean.fileSize != null">
+                #{bean.fileSize},
+            </if>
+            <if test="bean.fileName != null">
+                #{bean.fileName},
+            </if>
+            <if test="bean.fileCover != null">
+                #{bean.fileCover},
+            </if>
+            <if test="bean.filePath != null">
+                #{bean.filePath},
+            </if>
+            <if test="bean.fileClass != null">
+                #{bean.fileClass},
+            </if>
+            <if test="bean.fileCategory != null">
+                #{bean.fileCategory},
+            </if>
+            <if test="bean.fileType != null">
+                #{bean.fileType},
+            </if>
+            <if test="bean.status != null">
+                #{bean.status},
+            </if>
+            <if test="bean.delFlag != null">
+                #{bean.delFlag},
+            </if>
+            <if test="bean.recycleTime != null">
+                #{bean.recycleTime},
+            </if>
+            <if test="bean.createTime != null">
+                #{bean.createTime},
+            </if>
+            <if test="bean.updateTime != null">
+                #{bean.updateTime},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="insertBatch">
+        insert into sys_file_info (id,user_id,file_md5,file_pid,file_size,file_name,file_cover,file_path,file_class,
+        file_category,file_type,status,del_flag,recycle_time,create_time,update_time) values
+        <foreach collection="list" item="item" separator=",">
+            (
+                #{item.id},
+                #{item.userId},
+                #{item.fileMd5},
+                #{item.filePid},
+                #{item.fileSize},
+                #{item.fileName},
+                #{item.fileCover},
+                #{item.filePath},
+                #{item.fileClass},
+                #{item.fileCategory},
+                #{item.fileType},
+                #{item.status},
+                #{item.delFlag},
+                #{item.recycleTime},
+                #{item.createTime},
+                #{item.updateTime}
+            )
+        </foreach>
+    </insert>
+
+    <update id="updateById">
+        update sys_file_info
+        <set>
+            <if test="bean.userId != null">
+                user_id = #{bean.userId},
+            </if>
+            <if test="bean.fileMd5 != null">
+                file_md5 = #{bean.fileMd5},
+            </if>
+            <if test="bean.filePid != null">
+                file_pid = #{bean.filePid},
+            </if>
+            <if test="bean.qqAvatar != null">
+                qq_avatar = #{bean.qqAvatar},
+            </if>
+            <if test="bean.fileSize != null">
+                file_size = #{bean.fileSize},
+            </if>
+            <if test="bean.fileName != null">
+                file_name = #{bean.fileName},
+            </if>
+            <if test="bean.fileCover != null">
+                file_cover = #{bean.fileCover},
+            </if>
+            <if test="bean.filePath != null">
+                file_path = #{bean.filePath},
+            </if>
+            <if test="bean.fileClass != null">
+                file_class = #{bean.fileClass},
+            </if>
+            <if test="bean.fileCategory != null">
+                file_category = #{bean.fileCategory},
+            </if>
+            <if test="bean.fileType != null">
+                file_type = #{bean.fileType},
+            </if>
+            <if test="bean.status != null">
+                status = #{bean.status},
+            </if>
+            <if test="bean.delFlag != null">
+                del_flag = #{bean.delFlag},
+            </if>
+            <if test="bean.recycleTime != null">
+                recycle_time = #{bean.recycleTime},
+            </if>
+            <if test="bean.createTime != null">
+                create_time = #{bean.createTime},
+            </if>
+            <if test="bean.updateTime != null">
+                update_time = #{bean.updateTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="updateByParam">
+        update sys_file_info
+        <set>
+            <if test="bean.userId != null">
+                user_id = #{bean.userId},
+            </if>
+            <if test="bean.fileMd5 != null">
+                file_md5 = #{bean.fileMd5},
+            </if>
+            <if test="bean.filePid != null">
+                file_pid = #{bean.filePid},
+            </if>
+            <if test="bean.qqAvatar != null">
+                qq_avatar = #{bean.qqAvatar},
+            </if>
+            <if test="bean.fileSize != null">
+                file_size = #{bean.fileSize},
+            </if>
+            <if test="bean.fileName != null">
+                file_name = #{bean.fileName},
+            </if>
+            <if test="bean.fileCover != null">
+                file_cover = #{bean.fileCover},
+            </if>
+            <if test="bean.filePath != null">
+                file_path = #{bean.filePath},
+            </if>
+            <if test="bean.fileClass != null">
+                file_class = #{bean.fileClass},
+            </if>
+            <if test="bean.fileCategory != null">
+                file_category = #{bean.fileCategory},
+            </if>
+            <if test="bean.fileType != null">
+                file_type = #{bean.fileType},
+            </if>
+            <if test="bean.status != null">
+                status = #{bean.status},
+            </if>
+            <if test="bean.delFlag != null">
+                del_flag = #{bean.delFlag},
+            </if>
+            <if test="bean.recycleTime != null">
+                recycle_time = #{bean.recycleTime},
+            </if>
+            <if test="bean.createTime != null">
+                create_time = #{bean.createTime},
+            </if>
+            <if test="bean.updateTime != null">
+                update_time = #{bean.updateTime},
+            </if>
+        </set>
+        <include refid="BaseQueryCondition"/>
+    </update>
+
+    <delete id="deleteById" parameterType="string">
+        delete from sys_file_info where id = #{id}
+    </delete>
+
+    <delete id="deleteByParam">
+        delete from sys_file_info
+        <include refid="BaseQueryCondition"/>
+    </delete>
+
+
+    <select id="selectUsedSpace" resultType="java.lang.Long">
+        select ifnull(sum(file_size), 0)
+        from sys_file_info
+        where user_id = #{userId}
+    </select>
+
+    <select id="selectByFileIdAndUserId" resultMap="BaseResultMap">
+        select
+        <include refid="BaseColumnList"/>
+        from sys_file_info where id = #{fileId} and user_id = #{userId}
+    </select>
+
+    <update id="updateFileStatus">
+        update sys_file_info
+        <set>
+            <if test="bean.fileSize != null">
+                file_size = #{bean.fileSize},
+            </if>
+            <if test="bean.fileCover != null">
+                file_cover = #{bean.fileCover},
+            </if>
+            <if test="bean.status != null">
+                status = #{bean.status},
+            </if>
+        </set>
+        where id = #{fileId} and user_id = #{userId} and status = #{oldStatus}
+    </update>
+
+    <update id="updateByFileIdAndUserId">
+        update sys_file_info
+        <set>
+            <if test="bean.filePid != null">
+                file_pid = #{bean.filePid},
+            </if>
+            <if test="bean.fileName != null">
+                file_name = #{bean.fileName},
+            </if>
+            <if test="bean.updateTime != null">
+                update_time = #{bean.updateTime},
+            </if>
+        </set>
+        where id = #{fileId} and user_id = #{userId}
+    </update>
+
+    <update id="updateByFileIdBatch">
+        update sys_file_info
+        <set>
+            <if test="bean.filePid != null">
+                file_pid = #{bean.filePid},
+            </if>
+            <if test="bean.recycleTime != null">
+                recycle_time = #{bean.recycleTime},
+            </if>
+            <if test="bean.delFlag != null">
+                del_flag = #{bean.delFlag},
+            </if>
+            <if test="bean.updateTime != null">
+                update_time = #{bean.updateTime},
+            </if>
+        </set>
+        where user_id = #{userId}
+        <if test="filePidList">
+            and file_pid in (<foreach collection="filePidList" item="item" separator=",">#{item}</foreach>)
+        </if>
+        <if test="fileIdList">
+            and id in (<foreach collection="fileIdList" item="item" separator=",">#{item}</foreach>)
+        </if>
+        <if test="oldDelFlag">
+            and del_flag = #{oldDelFlag}
+        </if>
+    </update>
+
+    <delete id="deleteByFileIdBatch">
+        delete from sys_file_info
+        where user_id = #{userId}
+        <if test="filePidList">
+            and file_pid in (<foreach collection="filePidList" item="item" separator=",">#{item}</foreach>)
+        </if>
+        <if test="fileIdList">
+            and id in (<foreach collection="fileIdList" item="item" separator=",">#{item}</foreach>)
+        </if>
+        <if test="oldDelFlag">
+            and del_flag = #{oldDelFlag}
+        </if>
+    </delete>
+
+    <delete id="deleteByUserId">
+        delete from sys_file_info where user_id = #{userId}
+    </delete>
+
+</mapper>

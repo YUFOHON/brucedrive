@@ -1,0 +1,55 @@
+2024-06-03 00:11:00.824 [http-nio-8003-exec-2] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 00:11:00.824 [http-nio-8003-exec-3] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 00:11:00.828 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/getUserSpace，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 00:11:00.828 [http-nio-8003-exec-2] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/loadDataList，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 00:16:18.907 [http-nio-8003-exec-7] ERROR c.y.s.impl.SysFileInfoServiceImpl -文件上傳失敗
+com.ywy.core.exception.BusinessException: Insufficient network disk space, please expand
+2024-06-03 00:16:18.908 [http-nio-8003-exec-7] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/uploadFile，错误信息：
+com.ywy.core.exception.BusinessException: Insufficient network disk space, please expand
+2024-06-03 00:24:43.437 [http-nio-8003-exec-3] ERROR c.y.s.impl.SysFileInfoServiceImpl -文件上傳失敗
+com.ywy.core.exception.BusinessException: Insufficient network disk space, please expand
+2024-06-03 00:24:43.438 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/uploadFile，错误信息：
+com.ywy.core.exception.BusinessException: Insufficient network disk space, please expand
+2024-06-03 00:25:33.922 [http-nio-8003-exec-1] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 00:25:33.923 [http-nio-8003-exec-1] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/getUserSpace，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 11:48:26.245 [http-nio-8003-exec-1] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 11:48:26.247 [http-nio-8003-exec-1] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/uploadFile，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 18:36:32.614 [http-nio-8003-exec-3] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 18:36:32.619 [http-nio-8003-exec-3] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/uploadFile，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 18:40:08.131 [http-nio-8003-exec-1] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 18:40:08.134 [http-nio-8003-exec-1] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/uploadFile，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 18:40:20.941 [http-nio-8003-exec-2] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: 图片验证码不正确
+2024-06-03 21:43:22.067 [http-nio-8003-exec-9] ERROR c.y.c.aspect.GlobalOperationAspect -Global interceptor exception
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 21:43:22.071 [http-nio-8003-exec-9] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/file/loadDataList，错误信息：
+com.ywy.core.exception.BusinessException: Login timeout, please login again
+2024-06-03 22:07:58.558 [task-7] ERROR c.y.s.impl.SysFileInfoServiceImpl -File transcoding failed，fileId：b3i49mViQC，userId：1542164094
+java.util.MissingFormatArgumentException: Format specifier '%s'
+	at java.base/java.util.Formatter.format(Formatter.java:2688)
+	at java.base/java.util.Formatter.format(Formatter.java:2625)
+	at java.base/java.lang.String.format(String.java:4145)
+	at com.ywy.util.FFMpegUtil.cutFile4Video(FFMpegUtil.java:32)
+	at com.ywy.service.impl.SysFileInfoServiceImpl.transferFile(SysFileInfoServiceImpl.java:789)
+	at com.ywy.service.impl.SysFileInfoServiceImpl$$FastClassBySpringCGLIB$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)

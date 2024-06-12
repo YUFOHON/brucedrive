@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ywy.mapper.SysFileShareMapper">
+
+    <!--实体映射-->
+    <resultMap id="BaseResultMap" type="com.ywy.pojo.entity.SysFileShare">
+        <id property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="fileId" column="file_id" jdbcType="VARCHAR"/>
+        <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+        <result property="validType" column="valid_type" jdbcType="TINYINT"/>
+        <result property="expireTime" column="expire_time" jdbcType="TIMESTAMP"/>
+        <result property="code" column="code" jdbcType="VARCHAR"/>
+        <result property="showCount" column="show_count" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+
+        <!--******************** 联表查询 sys_file_info ********************-->
+        <result property="fileName" column="file_name" jdbcType="VARCHAR"/>
+        <result property="fileCover" column="file_cover" jdbcType="VARCHAR"/>
+        <result property="fileClass" column="file_class" jdbcType="TINYINT"/>
+        <result property="fileCategory" column="file_category" jdbcType="TINYINT"/>
+        <result property="fileType" column="file_type" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <!-- 通用查询结果列-->
+    <sql id="BaseColumnList">
+        s.id
+        ,s.file_id,s.user_id,s.valid_type,s.expire_time,s.code,s.show_count,s.create_time
+    </sql>
+
+    <!-- 通用查询条件列-->
+    <sql id="BaseQueryCondition">
+        <where>
+            <if test="param.shareId != null and param.shareId!=''">
+                and s.id = #{param.shareId}
+            </if>
+            <if test="param.fileId != null and param.fileId!=''">
+                and s.file_id = #{param.fileId}
+            </if>
+            <if test="param.userId != null and param.userId!=''">
+                and s.user_id = #{param.userId}
+            </if>
+            <if test="param.validType != null">
+                and s.valid_type = #{param.validType}
+            </if>
+            <if test="param.queryFileName">
+                and f.del_flag = 0
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectById" parameterType="string" resultMap="BaseResultMap">
+        select <include refid="BaseColumnList"/> from sys_file_share s where s.id = #{id}
+    </select>
+
+    <select id="selectList" parameterType="com.ywy.pojo.param.FileShareParam" resultMap="BaseResultMap">
+        select
+        <include refid="BaseColumnList"/>
+        <if test="param.queryFileName">
+            ,f.file_name, f.file_class, f.file_category, f.file_type, f.file_cover
+        </if>
+        from sys_file_share s
+        <if test="param.queryFileName">
+            left join sys_file_info f on s.file_id = f.id
+        </if>
+        <include refid="BaseQueryCondition"/>
+        <if test="param.orderBy!=null">
+            order by ${param.orderBy}
+        </if>
+        <if test="param.pageNo!=null and param.pageSize!=null">
+            limit ${(param.pageNo - 1) * param.pageSize}, ${param.pageSize}
+        </if>
+    </select>
+
+    <select id="selectCount" parameterType="com.ywy.pojo.param.FileShareParam" resultType="int">
+        select count(1) from sys_file_share s
+        <if test="param.queryFileName">
+            left join sys_file_info f on s.file_id = f.id
+        </if>
+        <include refid="BaseQueryCondition"/>
+    </select>
+
+    <insert id="insert" parameterType="com.ywy.pojo.entity.SysFileShare">
+        insert into sys_file_share
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bean.id != null">
+                id,
+            </if>
+            <if test="bean.fileId != null">
+                file_id,
+            </if>
+            <if test="bean.userId != null">
+                user_id,
+            </if>
+            <if test="bean.validType != null">
+                valid_type,
+            </if>
+            <if test="bean.expireTime != null">
+                expire_time,
+            </if>
+            <if test="bean.code != null">
+                code,
+            </if>
+            <if test="bean.showCount != null">
+                show_count,
+            </if>
+            <if test="bean.createTime != null">
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bean.id != null">
+                #{bean.id},
+            </if>
+            <if test="bean.fileId != null">
+                #{bean.fileId},
+            </if>
+            <if test="bean.userId != null">
+                #{bean.userId},
+            </if>
+            <if test="bean.validType != null">
+                #{bean.validType},
+            </if>
+            <if test="bean.expireTime !=null">
+                #{bean.expireTime},
+            </if>
+            <if test="bean.code != null">
+                #{bean.code},
+            </if>
+            <if test="bean.showCount != null">
+                #{bean.showCount},
+            </if>
+            <if test="bean.createTime != null">
+                #{bean.createTime},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="insertBatch" parameterType="com.ywy.pojo.entity.SysFileShare">
+        insert into sys_file_share(id,file_id,user_id,valid_type,expire_time,code,show_count,create_time) values
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.id},
+            #{item.fileId},
+            #{item.userId},
+            #{item.validType},
+            #{item.expireTime},
+            #{item.code},
+            #{item.showCount},
+            #{item.createTime}
+            )
+        </foreach>
+    </insert>
+
+    <update id="updateById">
+        update sys_file_share
+        <set>
+            <if test="bean.fileId != null">
+                file_id = #{bean.fileId},
+            </if>
+            <if test="bean.userId != null">
+                user_id = #{bean.userId},
+            </if>
+            <if test="bean.validType != null">
+                valid_type = #{bean.validType},
+            </if>
+            <if test="bean.expireTime != null">
+                expire_time = #{bean.expireTime},
+            </if>
+            <if test="bean.code != null">
+                code = #{bean.code},
+            </if>
+            <if test="bean.showCount != null">
+                show_count = #{bean.showCount},
+            </if>
+            <if test="bean.createTime != null">
+                create_time = #{bean.createTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="updateByParam">
+        update sys_file_share
+        <set>
+            <if test="bean.fileId != null">
+                file_id = #{bean.fileId},
+            </if>
+            <if test="bean.userId != null">
+                user_id = #{bean.userId},
+            </if>
+            <if test="bean.validType != null">
+                valid_type = #{bean.validType},
+            </if>
+            <if test="bean.expireTime != null">
+                expire_time = #{bean.expireTime},
+            </if>
+            <if test="bean.code != null">
+                code = #{bean.code},
+            </if>
+            <if test="bean.showCount != null">
+                show_count = #{bean.showCount},
+            </if>
+            <if test="bean.createTime != null">
+                create_time = #{bean.createTime},
+            </if>
+        </set>
+        <include refid="BaseQueryCondition"/>
+    </update>
+
+    <delete id="deleteById" parameterType="string">
+        delete from sys_file_share where id = #{id}
+    </delete>
+
+    <delete id="deleteByParam">
+        delete from sys_file_share
+        <include refid="BaseQueryCondition"/>
+    </delete>
+
+
+    <delete id="deleteBatch">
+        delete from sys_file_share
+        where user_id = #{userId}
+        and id in (<foreach collection="shareIdArr" item="item" separator=",">#{item}</foreach>)
+    </delete>
+
+    <update id="updateShowCount">
+        update sys_file_share
+        set show_count = show_count + 1
+        where id = #{shareId}
+    </update>
+</mapper>

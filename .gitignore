@@ -1,0 +1,21 @@
+# Vue.js
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+vite.config.js
+
+# Spring Boot
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Confidential files
+application.properties
+application-dev.yml
+application-production.yml
+application.yml
+.env
+*.pem
+*.key

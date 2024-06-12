@@ -1,0 +1,348 @@
+2024-05-31 00:02:02.361 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 18012 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-05-31 00:02:02.368 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-05-31 00:02:03.522 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-31 00:02:03.526 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 00:02:03.568 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2024-05-31 00:02:04.864 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-05-31 00:02:04.891 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-05-31 00:02:04.892 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-05-31 00:02:04.892 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-05-31 00:02:05.086 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-05-31 00:02:05.087 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 2642 ms
+2024-05-31 00:02:07.620 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-05-31 00:02:07.650 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-05-31 00:02:07.675 [main] INFO  com.ywy.MainApplication -Started MainApplication in 6.044 seconds (JVM running for 13.571)
+2024-05-31 00:02:07.776 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-05-31 00:02:08.002 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-05-31 00:03:14.281 [http-nio-8003-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31 00:03:14.281 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-05-31 00:03:14.284 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 3 ms
+2024-05-31 00:03:14.391 [http-nio-8003-exec-1] ERROR c.y.c.aspect.GlobalOperationAspect -全局拦截器异常
+com.ywy.core.exception.BusinessException: 登录超时，请重新登录
+2024-05-31 00:03:14.395 [http-nio-8003-exec-1] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/getUserSpace，错误信息：
+com.ywy.core.exception.BusinessException: 登录超时，请重新登录
+2024-05-31 00:04:46.735 [http-nio-8003-exec-5] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/register，错误信息：
+com.ywy.core.exception.BusinessException: verification code error
+2024-05-31 00:05:13.553 [http-nio-8003-exec-8] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: 图片验证码不正确
+2024-05-31 00:05:22.911 [http-nio-8003-exec-10] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: account or password wrong
+2024-05-31 00:05:27.590 [http-nio-8003-exec-2] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: account or password wrong
+2024-05-31 00:05:37.407 [http-nio-8003-exec-4] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: 图片验证码不正确
+2024-05-31 00:05:44.886 [http-nio-8003-exec-6] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: account or password wrong
+2024-05-31 00:06:06.236 [http-nio-8003-exec-2] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/share/loadDataList，错误信息：
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'brucepan.sys_file_share' doesn't exist
+### The error may exist in com/ywy/mapper/SysFileShareMapper.xml
+### The error may involve com.ywy.mapper.SysFileShareMapper.selectCount-Inline
+### The error occurred while setting parameters
+### SQL: select count(1) from sys_file_share s                       left join sys_file_info f on s.file_id = f.id                              WHERE  s.user_id = ?                                                        and f.del_flag = 0
+### Cause: java.sql.SQLSyntaxErrorException: Table 'brucepan.sys_file_share' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'brucepan.sys_file_share' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at jdk.proxy2/jdk.proxy2.$Proxy80.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy89.selectCount(Unknown Source)
+	at com.ywy.core.base.BaseServiceImpl.findListByPage(BaseServiceImpl.java:25)
+	at com.ywy.core.base.BaseServiceImpl$$FastClassBySpringCGLIB$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.ywy.service.impl.SysFileShareServiceImpl$$EnhancerBySpringCGLIB$$1.findListByPage(<generated>)
+	at com.ywy.controller.ShareController.loadDataList(ShareController.java:41)
+	at com.ywy.controller.ShareController$$FastClassBySpringCGLIB$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.ywy.controller.ShareController$$EnhancerBySpringCGLIB$$1.loadDataList(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.__invoke(StandardContextValve.java:97)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:41002)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'brucepan.sys_file_share' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at jdk.internal.reflect.GeneratedMethodAccessor70.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at jdk.proxy3/jdk.proxy3.$Proxy111.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 75 common frames omitted
+2024-05-31 00:11:08.127 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-05-31 00:11:08.136 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 00:11:08.138 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2024-05-31 01:29:08.573 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-05-31 01:29:08.587 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 01:29:08.591 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2024-05-31 01:38:08.666 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-05-31 01:38:08.742 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 01:38:08.746 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2024-05-31 01:41:08.863 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-05-31 01:41:08.896 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 01:41:08.901 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2024-05-31 01:44:08.988 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-05-31 01:44:09.088 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 01:44:09.090 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2024-05-31 01:47:09.251 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-05-31 01:47:09.254 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 01:47:09.255 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2024-05-31 01:50:09.280 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-05-31 01:50:09.284 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 01:50:09.285 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2024-05-31 01:51:06.377 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-05-31 01:51:06.379 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-05-31 01:51:11.569 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 21852 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-05-31 01:51:11.572 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-05-31 01:51:12.470 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-31 01:51:12.474 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 01:51:12.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2024-05-31 01:51:13.610 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-05-31 01:51:13.624 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-05-31 01:51:13.625 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-05-31 01:51:13.625 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-05-31 01:51:13.736 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-05-31 01:51:13.736 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 2063 ms
+2024-05-31 01:51:15.427 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-05-31 01:51:15.457 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-05-31 01:51:15.479 [main] INFO  com.ywy.MainApplication -Started MainApplication in 4.704 seconds (JVM running for 6.527)
+2024-05-31 01:51:15.572 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-05-31 01:51:15.777 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-05-31 01:51:31.243 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-05-31 01:51:31.250 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-05-31 01:51:36.463 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 3948 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-05-31 01:51:36.465 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-05-31 01:51:37.251 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-31 01:51:37.255 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 01:51:37.295 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2024-05-31 01:51:38.335 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-05-31 01:51:38.346 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-05-31 01:51:38.347 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-05-31 01:51:38.347 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-05-31 01:51:38.449 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-05-31 01:51:38.449 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 1909 ms
+2024-05-31 01:51:40.028 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-05-31 01:51:40.055 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-05-31 01:51:40.075 [main] INFO  com.ywy.MainApplication -Started MainApplication in 4.288 seconds (JVM running for 5.878)
+2024-05-31 01:51:40.162 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-05-31 01:51:40.341 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-05-31 01:52:56.528 [http-nio-8003-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31 01:52:56.528 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-05-31 01:52:56.530 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 2 ms
+2024-05-31 02:01:01.519 [HikariCPDatasource housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=2m20s960ms324µs500ns).
+2024-05-31 02:01:01.574 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-05-31 02:01:01.580 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-05-31 02:01:10.625 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 26924 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-05-31 02:01:10.628 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-05-31 02:01:11.478 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-31 02:01:11.482 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 02:01:11.522 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2024-05-31 02:01:12.585 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-05-31 02:01:12.597 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-05-31 02:01:12.598 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-05-31 02:01:12.598 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-05-31 02:01:12.704 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-05-31 02:01:12.705 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 1990 ms
+2024-05-31 02:01:14.622 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-05-31 02:01:14.656 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-05-31 02:01:14.680 [main] INFO  com.ywy.MainApplication -Started MainApplication in 4.728 seconds (JVM running for 6.237)
+2024-05-31 02:01:14.796 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-05-31 02:01:15.000 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-05-31 02:01:51.490 [http-nio-8003-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31 02:01:51.490 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-05-31 02:01:51.492 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 1 ms
+2024-05-31 02:02:05.335 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-05-31 02:02:05.342 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-05-31 02:02:08.790 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 9332 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-05-31 02:02:08.792 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-05-31 02:02:09.609 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-31 02:02:09.612 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 02:02:09.649 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2024-05-31 02:02:10.639 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-05-31 02:02:10.651 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-05-31 02:02:10.652 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-05-31 02:02:10.652 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-05-31 02:02:10.752 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-05-31 02:02:10.752 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 1881 ms
+2024-05-31 02:02:12.274 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-05-31 02:02:12.299 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-05-31 02:02:12.318 [main] INFO  com.ywy.MainApplication -Started MainApplication in 4.159 seconds (JVM running for 5.625)
+2024-05-31 02:02:12.405 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-05-31 02:02:12.578 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-05-31 02:02:14.826 [http-nio-8003-exec-2] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31 02:02:14.826 [http-nio-8003-exec-2] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-05-31 02:02:14.827 [http-nio-8003-exec-2] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 1 ms
+2024-05-31 02:03:35.376 [HikariCPDatasource housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=1m22s694ms441µs900ns).
+2024-05-31 02:05:47.671 [HikariCPDatasource housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=1m12s286ms700µs400ns).
+2024-05-31 02:05:55.379 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-05-31 02:05:55.386 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-05-31 02:06:01.699 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 29180 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-05-31 02:06:01.701 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-05-31 02:06:02.547 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-31 02:06:02.550 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 02:06:02.584 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2024-05-31 02:06:03.600 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-05-31 02:06:03.613 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-05-31 02:06:03.614 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-05-31 02:06:03.614 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-05-31 02:06:03.730 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-05-31 02:06:03.730 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 1952 ms
+2024-05-31 02:06:05.301 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-05-31 02:06:05.328 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-05-31 02:06:05.346 [main] INFO  com.ywy.MainApplication -Started MainApplication in 4.34 seconds (JVM running for 6.173)
+2024-05-31 02:06:05.430 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-05-31 02:06:05.607 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-05-31 02:06:14.579 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-05-31 02:06:14.585 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-05-31 02:06:18.706 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 21784 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-05-31 02:06:18.709 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-05-31 02:06:19.612 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-31 02:06:19.616 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 02:06:19.655 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2024-05-31 02:06:20.706 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-05-31 02:06:20.718 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-05-31 02:06:20.718 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-05-31 02:06:20.718 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-05-31 02:06:20.830 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-05-31 02:06:20.831 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 2041 ms
+2024-05-31 02:06:22.373 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-05-31 02:06:22.398 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-05-31 02:06:22.417 [main] INFO  com.ywy.MainApplication -Started MainApplication in 4.361 seconds (JVM running for 5.848)
+2024-05-31 02:06:22.504 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-05-31 02:06:22.678 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-05-31 02:06:29.990 [http-nio-8003-exec-2] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31 02:06:29.990 [http-nio-8003-exec-2] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-05-31 02:06:29.991 [http-nio-8003-exec-2] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 1 ms
+2024-05-31 02:07:43.127 [HikariCPDatasource housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool -HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=45s569ms634µs300ns).
+2024-05-31 02:07:43.171 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-05-31 02:07:43.177 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-05-31 02:07:50.449 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 12344 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-05-31 02:07:50.452 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-05-31 02:07:51.307 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-31 02:07:51.312 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 02:07:51.354 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2024-05-31 02:07:52.396 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-05-31 02:07:52.407 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-05-31 02:07:52.408 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-05-31 02:07:52.408 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-05-31 02:07:52.510 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-05-31 02:07:52.510 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 1979 ms
+2024-05-31 02:07:54.070 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-05-31 02:07:54.095 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-05-31 02:07:54.113 [main] INFO  com.ywy.MainApplication -Started MainApplication in 4.307 seconds (JVM running for 5.798)
+2024-05-31 02:07:54.198 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-05-31 02:07:54.368 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-05-31 02:08:11.900 [http-nio-8003-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31 02:08:11.900 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-05-31 02:08:11.902 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 2 ms
+2024-05-31 02:11:08.286 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-05-31 02:11:08.294 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
+2024-05-31 22:30:04.561 [main] INFO  com.ywy.MainApplication -Starting MainApplication using Java 17.0.8 on DESKTOP-326BLPA with PID 19824 (C:\Users\user\Desktop\boot-netdisk-master\boot-netdisk-backend\target\classes started by user in C:\Users\user\Desktop\boot-netdisk-master)
+2024-05-31 22:30:04.564 [main] INFO  com.ywy.MainApplication -The following profiles are active: dev
+2024-05-31 22:30:05.846 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-31 22:30:05.849 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 22:30:05.897 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2024-05-31 22:30:06.992 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8003 (http)
+2024-05-31 22:30:07.006 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8003"]
+2024-05-31 22:30:07.007 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2024-05-31 22:30:07.007 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-05-31 22:30:07.128 [main] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring embedded WebApplicationContext
+2024-05-31 22:30:07.128 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 2494 ms
+2024-05-31 22:30:08.732 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8003"]
+2024-05-31 22:30:08.758 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 8003 (http) with context path '/api'
+2024-05-31 22:30:08.778 [main] INFO  com.ywy.MainApplication -Started MainApplication in 4.98 seconds (JVM running for 7.883)
+2024-05-31 22:30:08.861 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Starting...
+2024-05-31 22:30:09.040 [scheduling-1] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Start completed.
+2024-05-31 22:30:17.225 [http-nio-8003-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31 22:30:17.226 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2024-05-31 22:30:17.227 [http-nio-8003-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 1 ms
+2024-05-31 22:39:04.442 [http-nio-8003-exec-9] ERROR c.y.c.e.GlobalExceptionHandler -请求错误，请求地址：http://localhost:8003/api/login，错误信息：
+com.ywy.core.exception.BusinessException: 图片验证码不正确
+2024-05-31 22:57:09.242 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 22:57:09.247 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2024-05-31 22:57:09.257 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-05-31 23:03:09.373 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-31 23:03:09.376 [scheduling-1] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2024-05-31 23:03:09.384 [scheduling-1] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider -No MyBatis mapper was found in '[com.ywy.mapper]' package. Please check your configuration.
+2024-05-31 23:44:17.545 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown initiated...
+2024-05-31 23:44:17.548 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -HikariCPDatasource - Shutdown completed.
